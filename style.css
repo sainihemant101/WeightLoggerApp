@@ -523,3 +523,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 40px;
   background: #007bff !important; /* Blue for major lines */
 }
+
+.ruler-wrapper {
+  overflow-x: auto !important;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch; /* Essential for smooth Android/iOS scrolling */
+  touch-action: pan-x; /* Tells the phone to allow horizontal finger swipes */
+}
