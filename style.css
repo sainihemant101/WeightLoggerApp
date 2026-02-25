@@ -504,3 +504,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   z-index: 10;
   border-radius: 0 0 4px 4px;
 }
+
+/* Make sure the ruler has a height and the ticks have a color */
+.ruler-wrapper {
+  background: #1e1e1e !important; /* Dark grey background */
+  height: 120px;
+  border: 1px solid #333;
+  margin-top: 10px;
+}
+
+.tick {
+  width: 2px;
+  background: #555 !important; /* Light grey so they are visible */
+  flex-shrink: 0;
+}
+
+.tick.major {
+  height: 40px;
+  background: #007bff !important; /* Blue for major lines */
+}
