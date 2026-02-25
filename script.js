@@ -12,11 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function showForm() {
-  document.getElementById("home-screen").style.cssText =
-    "display: none !important";
-  document.getElementById("form-screen").style.cssText =
-    "display: flex !important";
+  document.getElementById("home-screen").style.cssText = "display: none !important";
+  document.getElementById("form-screen").style.cssText = "display: flex !important";
   setDefaultDate();
+  initRuler(); // Added this to initialize the ruler when form opens
 }
 
 function showHome() {
@@ -47,7 +46,11 @@ function setDefaultDate() {
 function resetForm() {
   document.getElementById("input-date").value = "";
   document.getElementById("input-time").value = "";
-  document.getElementById("input-weight").value = "";
+  // Reset ruler position to 70kg
+  const wrapper = document.querySelector('.ruler-wrapper');
+  if(wrapper) {
+    wrapper.scrollLeft = (70 - minWeight) / step * tickSpacing;
+  }
   document.getElementById("submit-btn").disabled = false;
   document.getElementById("submit-btn").innerText = "✅ Submit Entry";
   removeAlert();
@@ -171,14 +174,13 @@ function submitEntry() {
 
   const dateInput = document.getElementById("input-date").value;
   const timeInput = document.getElementById("input-time").value;
-  const weightInput = document.getElementById("input-weight").value;
+  
+  // CHANGED: Grab weight from the ruler display text instead of an input field
+  const weightInput = document.getElementById("weight-value").innerText;
 
   if (!dateInput || !timeInput || !weightInput) {
     warningAcknowledged = false;
-    showAlert(
-      "❌ All fields are required. Please fill in Date, Time of Day, and Weight.",
-      "danger"
-    );
+    showAlert("❌ All fields are required.", "danger");
     return;
   }
 
@@ -318,3 +320,41 @@ function sendToSheet(data) {
       }, 2000);
     });
 }
+
+
+// Ruler Configuration
+const ruler = document.getElementById('ruler');
+const weightDisplay = document.getElementById('weight-value');
+const minWeight = 40;
+const maxWeight = 150;
+const step = 0.1;
+const tickSpacing = 10; // Must match the 'gap' in CSS
+
+// Generate Ruler Ticks
+function initRuler() {
+  let html = '';
+  for (let i = minWeight; i <= maxWeight; i = (i * 10 + step * 10) / 10) {
+    const isMajor = Number.isInteger(i);
+    html += `<div class="tick ${isMajor ? 'major' : 'minor'}" data-value="${isMajor ? i : ''}"></div>`;
+  }
+  ruler.innerHTML = html;
+
+  // Listen for scroll
+  const wrapper = document.querySelector('.ruler-wrapper');
+  wrapper.addEventListener('scroll', () => {
+    const scrollLeft = wrapper.scrollLeft;
+    const weight = minWeight + (scrollLeft / tickSpacing) * step;
+    weightDisplay.innerText = weight.toFixed(1);
+  });
+  
+  // Set default starting position (e.g., 70kg)
+  setTimeout(() => {
+      const startWeight = 70;
+      wrapper.scrollLeft = (startWeight - minWeight) / step * tickSpacing;
+  }, 100);
+}
+
+// Call this inside your showForm() function
+// Replace 'setDefaultDate();' with:
+// setDefaultDate();
+// initRuler();
