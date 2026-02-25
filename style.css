@@ -1,5 +1,5 @@
 /* ===========================
-   GLOBAL STYLES
+    GLOBAL STYLES
 =========================== */
 
 body {
@@ -16,7 +16,7 @@ body {
 }
 
 /* ===========================
-   HOME SCREEN
+    HOME SCREEN
 =========================== */
 
 .app-title {
@@ -32,7 +32,7 @@ body {
 }
 
 /* ===========================
-   FORM SCREEN
+    FORM SCREEN
 =========================== */
 
 .form-title {
@@ -47,7 +47,7 @@ body {
 }
 
 /* ===========================
-   INPUTS
+    INPUTS
 =========================== */
 
 .form-control,
@@ -72,13 +72,11 @@ body {
   color: #555555;
 }
 
-/* Fix dropdown arrow color for dark background */
 .form-select option {
   background-color: #1e1e1e;
   color: #f0f0f0;
 }
 
-/* Fix date input icon color */
 input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
   opacity: 0.6;
@@ -86,7 +84,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 /* ===========================
-   BUTTONS
+    BUTTONS
 =========================== */
 
 .btn-primary {
@@ -129,12 +127,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-size: 0.95rem;
 }
 
-.btn-link:hover {
-  color: #a0c4ff;
-}
-
 /* ===========================
-   ALERTS / PROMPTS
+    ALERTS / PROMPTS
 =========================== */
 
 .alert {
@@ -153,43 +147,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #ff6b6b;
 }
 
-.alert-success {
-  background-color: #0a2a14;
-  color: #69db7c;
-}
-
 /* ===========================
-   UTILITY
+    ANALYTICS PAGE
 =========================== */
-
-.mt-auto {
-  margin-top: auto !important;
-}
-
-/* ===========================
-   RESPONSIVE TWEAKS
-=========================== */
-
-@media (max-width: 400px) {
-  .app-title {
-    font-size: 1.8rem;
-  }
-
-  .form-title {
-    font-size: 1.3rem;
-  }
-}
-
-/* ===========================
-   ANALYTICS PAGE
-=========================== */
-
-.section-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin: 0;
-}
 
 .analytics-card {
   background-color: #1a1a1a;
@@ -198,97 +158,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: 1px solid #2a2a2a;
 }
 
-.chart-wrapper {
-  position: relative;
-  width: 100%;
-  height: 220px;
-}
-
-/* Day Range Selector */
-.day-selector {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.day-btn {
-  background-color: #2a2a2a;
-  border: 1px solid #333333;
-  color: #aaaaaa;
-  border-radius: 20px;
-  padding: 5px 14px;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.day-btn:hover {
-  background-color: #333333;
-  color: #ffffff;
-}
-
-.day-btn.active {
-  background-color: #4f8ef7;
-  border-color: #4f8ef7;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-/* Averages Grid */
-.avg-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.avg-card {
-  background-color: #111111;
-  border-radius: 12px;
-  padding: 16px;
-  text-align: center;
-  border: 1px solid #2a2a2a;
-}
-
-.avg-label {
-  font-size: 0.75rem;
-  color: #888888;
-  margin-bottom: 6px;
-}
-
-.avg-value {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #4f8ef7;
-}
-
-.avg-unit {
-  font-size: 0.75rem;
-  color: #666666;
-  margin-top: 2px;
-}
-
-/* Table */
-.table-wrapper {
-  overflow-x: auto;
-}
-
-.table-dark {
-  background-color: transparent;
-  font-size: 0.9rem;
-}
-
-.table-dark thead th {
-  color: #888888;
-  border-color: #2a2a2a;
-  font-weight: 500;
-}
-
-.table-dark td {
-  border-color: #1e1e1e;
-  color: #dddddd;
-}
 /* ===========================
-   LOADING OVERLAY
+    LOADING OVERLAY
 =========================== */
 
 #loading-overlay {
@@ -305,21 +176,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   flex-direction: column;
 }
 
-.overlay-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.overlay-text {
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin: 0;
-}
-
-/* Spinner */
 .spinner {
   width: 52px;
   height: 52px;
@@ -330,108 +186,46 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Success State */
-.overlay-success .spinner {
-  display: none;
-}
-
-.checkmark {
-  display: none;
-  width: 52px;
-  height: 52px;
-}
-
-.overlay-success .checkmark {
-  display: block;
-  animation: popIn 0.4s ease;
-}
-
-@keyframes popIn {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  70% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Error State */
-.overlay-error .spinner {
-  display: none;
-}
-
-.error-icon {
-  display: none;
-  font-size: 3rem;
-}
-
-.overlay-error .error-icon {
-  display: block;
-  animation: popIn 0.4s ease;
+  to { transform: rotate(360deg); }
 }
 
 /* ===========================
-   THREE DOTS LOADER
+    THREE DOTS LOADER
 =========================== */
-/* ===========================
-   THREE DOTS LOADER - UPDATED
-=========================== */
+
 .dots-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
-  height: 60px; /* Increased height to make it visible */
+  height: 60px;
   margin: 10px 0;
   width: 100%;
 }
 
 .dots-container span {
-  width: 16px; /* Slightly larger dots */
+  width: 16px;
   height: 16px;
-  background-color: #ffffff; /* White color to pop against dark background */
+  background-color: #ffffff;
   border-radius: 50%;
   display: inline-block;
   animation: dot-pulse 1.4s infinite ease-in-out both;
-  box-shadow: 0 0 10px rgba(79, 142, 247, 0.5); /* Subtle blue glow */
-}
-
-.dots-container span:nth-child(1) {
-  animation-delay: -0.32s;
-}
-.dots-container span:nth-child(2) {
-  animation-delay: -0.16s;
 }
 
 @keyframes dot-pulse {
-  0%,
-  80%,
-  100% {
-    transform: scale(0);
-    opacity: 0.3;
-  }
-  40% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
+  0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
+  40% { transform: scale(1.2); opacity: 1; }
 }
 
-/* Ruler Styling */
+/* ===========================
+    RULER PICKER STYLING
+=========================== */
+
 .weight-display-container {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  color: #007bff; /* Primary Blue */
-  margin-bottom: 10px;
+  color: #4f8ef7;
+  margin-bottom: 5px;
 }
 
 .weight-display-container .unit {
@@ -443,15 +237,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .ruler-wrapper {
   position: relative;
   width: 100%;
-  height: 100px;
-  background: #1e1e1e;
-  border-radius: 12px;
+  height: 120px;
+  background: #1a1a1a;
+  border-radius: 16px;
+  border: 1px solid #333;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  cursor: grab;
-  /* Hide scrollbar for Chrome/Safari */
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
 }
 
 .ruler-wrapper::-webkit-scrollbar {
@@ -459,38 +253,39 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .ruler-container {
-  display: inline-block;
-  padding: 0 50%; /* Center the first/last values */
-  height: 100%;
   display: flex;
   align-items: flex-end;
-  gap: 10px; /* Space between ticks */
+  padding: 0 50%; /* Allows scale to reach center */
+  height: 100%;
+  gap: 8px; /* Spacing between ticks */
 }
 
 .tick {
   width: 2px;
-  background: #444;
+  background: #555;
   flex-shrink: 0;
-}
-
-.tick.major {
-  height: 40px;
-  background: #888;
-  position: relative;
+  transition: background 0.2s;
 }
 
 .tick.minor {
   height: 20px;
 }
 
+.tick.major {
+  height: 45px;
+  background: #4f8ef7;
+  position: relative;
+}
+
 .tick.major::after {
   content: attr(data-value);
   position: absolute;
-  top: -25px;
+  top: -30px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 12px;
   color: #888;
+  font-weight: 600;
 }
 
 .ruler-pointer {
@@ -499,34 +294,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   left: 50%;
   transform: translateX(-50%);
   width: 4px;
-  height: 60px;
-  background: #007bff;
+  height: 80px;
+  background: #ff4757; /* Red pointer for visibility */
   z-index: 10;
   border-radius: 0 0 4px 4px;
-}
-
-/* Make sure the ruler has a height and the ticks have a color */
-.ruler-wrapper {
-  background: #1e1e1e !important; /* Dark grey background */
-  height: 120px;
-  border: 1px solid #333;
-  margin-top: 10px;
-}
-
-.tick {
-  width: 2px;
-  background: #555 !important; /* Light grey so they are visible */
-  flex-shrink: 0;
-}
-
-.tick.major {
-  height: 40px;
-  background: #007bff !important; /* Blue for major lines */
-}
-
-.ruler-wrapper {
-  overflow-x: auto !important;
-  overscroll-behavior-x: contain;
-  -webkit-overflow-scrolling: touch; /* Essential for smooth Android/iOS scrolling */
-  touch-action: pan-x; /* Tells the phone to allow horizontal finger swipes */
+  pointer-events: none;
 }
