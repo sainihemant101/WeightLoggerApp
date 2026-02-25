@@ -1,0 +1,427 @@
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+
+body {
+  background-color: #0f0f0f;
+  color: #f0f0f0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+/* ===========================
+   HOME SCREEN
+=========================== */
+
+.app-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.app-subtitle {
+  font-size: 1rem;
+  color: #888888;
+}
+
+/* ===========================
+   FORM SCREEN
+=========================== */
+
+.form-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.form-label {
+  color: #cccccc;
+  font-size: 0.95rem;
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+.form-control,
+.form-select {
+  background-color: #1e1e1e;
+  border: 1px solid #333333;
+  color: #f0f0f0;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: #1e1e1e;
+  border-color: #4f8ef7;
+  color: #f0f0f0;
+  box-shadow: 0 0 0 3px rgba(79, 142, 247, 0.2);
+}
+
+.form-control::placeholder {
+  color: #555555;
+}
+
+/* Fix dropdown arrow color for dark background */
+.form-select option {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+/* Fix date input icon color */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.btn-primary {
+  background-color: #4f8ef7;
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 14px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background-color: #3a7de8;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-outline-secondary {
+  border: 1px solid #444444;
+  color: #aaaaaa;
+  border-radius: 14px;
+  font-weight: 500;
+  font-size: 1.05rem;
+  padding: 14px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-color: #666666;
+}
+
+.btn-link {
+  color: #4f8ef7;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.btn-link:hover {
+  color: #a0c4ff;
+}
+
+/* ===========================
+   ALERTS / PROMPTS
+=========================== */
+
+.alert {
+  border-radius: 12px;
+  font-size: 0.9rem;
+  border: none;
+}
+
+.alert-warning {
+  background-color: #2a2200;
+  color: #ffd966;
+}
+
+.alert-danger {
+  background-color: #2a0a0a;
+  color: #ff6b6b;
+}
+
+.alert-success {
+  background-color: #0a2a14;
+  color: #69db7c;
+}
+
+/* ===========================
+   UTILITY
+=========================== */
+
+.mt-auto {
+  margin-top: auto !important;
+}
+
+/* ===========================
+   RESPONSIVE TWEAKS
+=========================== */
+
+@media (max-width: 400px) {
+  .app-title {
+    font-size: 1.8rem;
+  }
+
+  .form-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* ===========================
+   ANALYTICS PAGE
+=========================== */
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.analytics-card {
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #2a2a2a;
+}
+
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+}
+
+/* Day Range Selector */
+.day-selector {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.day-btn {
+  background-color: #2a2a2a;
+  border: 1px solid #333333;
+  color: #aaaaaa;
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.day-btn:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.day-btn.active {
+  background-color: #4f8ef7;
+  border-color: #4f8ef7;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Averages Grid */
+.avg-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.avg-card {
+  background-color: #111111;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid #2a2a2a;
+}
+
+.avg-label {
+  font-size: 0.75rem;
+  color: #888888;
+  margin-bottom: 6px;
+}
+
+.avg-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #4f8ef7;
+}
+
+.avg-unit {
+  font-size: 0.75rem;
+  color: #666666;
+  margin-top: 2px;
+}
+
+/* Table */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table-dark {
+  background-color: transparent;
+  font-size: 0.9rem;
+}
+
+.table-dark thead th {
+  color: #888888;
+  border-color: #2a2a2a;
+  font-weight: 500;
+}
+
+.table-dark td {
+  border-color: #1e1e1e;
+  color: #dddddd;
+}
+/* ===========================
+   LOADING OVERLAY
+=========================== */
+
+#loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.overlay-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.overlay-text {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Spinner */
+.spinner {
+  width: 52px;
+  height: 52px;
+  border: 5px solid #2a2a2a;
+  border-top-color: #4f8ef7;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Success State */
+.overlay-success .spinner {
+  display: none;
+}
+
+.checkmark {
+  display: none;
+  width: 52px;
+  height: 52px;
+}
+
+.overlay-success .checkmark {
+  display: block;
+  animation: popIn 0.4s ease;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Error State */
+.overlay-error .spinner {
+  display: none;
+}
+
+.error-icon {
+  display: none;
+  font-size: 3rem;
+}
+
+.overlay-error .error-icon {
+  display: block;
+  animation: popIn 0.4s ease;
+}
+
+/* ===========================
+   THREE DOTS LOADER
+=========================== */
+/* ===========================
+   THREE DOTS LOADER - UPDATED
+=========================== */
+.dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  height: 60px; /* Increased height to make it visible */
+  margin: 10px 0;
+  width: 100%;
+}
+
+.dots-container span {
+  width: 16px; /* Slightly larger dots */
+  height: 16px;
+  background-color: #ffffff; /* White color to pop against dark background */
+  border-radius: 50%;
+  display: inline-block;
+  animation: dot-pulse 1.4s infinite ease-in-out both;
+  box-shadow: 0 0 10px rgba(79, 142, 247, 0.5); /* Subtle blue glow */
+}
+
+.dots-container span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.dots-container span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes dot-pulse {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+    opacity: 0.3;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
