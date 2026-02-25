@@ -12,10 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function showForm() {
+  // 1. Show the screen
   document.getElementById("home-screen").style.cssText = "display: none !important";
   document.getElementById("form-screen").style.cssText = "display: flex !important";
+  
+  // 2. Set the date
   setDefaultDate();
-  initRuler(); // Added this to initialize the ruler when form opens
+  
+  // 3. DRAW THE RULER (Add a tiny delay to ensure the screen is visible first)
+  setTimeout(() => {
+    initRuler();
+  }, 50); 
 }
 
 function showHome() {
